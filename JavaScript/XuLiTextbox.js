@@ -3,11 +3,14 @@
   var dispXoa, displynum;
 
   this.displynum = displynum = function(n1) {
-    return calcform.txt1.value = calcform.txt1.value + n1;
+    calcform.txt1.value = calcform.txt1.value + n1;
+    return;
   };
 
   this.dispXoa = dispXoa = function(n1) {
-    return calcform.txt1.value = n1;
+    calcform.txt1.value = n1;
+    calcform.txt2.value = n1;
+    return;
   };
 
 }).call(this);
