@@ -2,15 +2,23 @@
 (function() {
   var dispXoa, displynum;
 
-  this.displynum = displynum = function(n1) {
-    calcform.txt1.value = calcform.txt1.value + n1;
-    return;
+  this.displynum = displynum = function(n1, n2) {
+    if (n2.length === 0) {
+      return calcform.txt1.value = calcform.txt1.value + n1;
+    } else {
+      if (isNaN(n1) === false || n1 === '(' || n1 === ')') {
+        calcform.txt1.value = n1;
+        return calcform.txt2.value = null;
+      } else {
+        calcform.txt1.value = calcform.txt2.value + n1;
+        return calcform.txt2.value = null;
+      }
+    }
   };
 
-  this.dispXoa = dispXoa = function(n1) {
+  this.dispXoa = dispXoa = function(n1, n2) {
     calcform.txt1.value = n1;
-    calcform.txt2.value = n1;
-    return;
+    return calcform.txt2.value = n2;
   };
 
 }).call(this);
